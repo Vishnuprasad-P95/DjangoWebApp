@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'StudyApp/css/home.css' %}">
+    <div class="logout-button">
+        <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    <h1>Welcome to the Home Page!</h1>
+{% endblock %}

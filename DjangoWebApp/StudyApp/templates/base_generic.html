@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'StudyApp/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar goes here -->
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- This is where the content from child templates will be inserted -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer goes here -->
+    </footer>
+
+    <script src="{% static 'StudyApp/js/scripts.js' %}"></script>
+</body>
+</html>
