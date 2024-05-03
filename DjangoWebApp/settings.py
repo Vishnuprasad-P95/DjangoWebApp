@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ysih%=f(5&$+h%jg72aldf%$9t@padbl8wx$dwfka8bb@k^n=$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["https://vpdjangowebapp.azurewebsites.net/", "40.78.194.97"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -115,9 +115,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+import os
 
+# ...
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'StudyApp/static'),
+)
 STATIC_URL = '/static/'
 
+# Add this line
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

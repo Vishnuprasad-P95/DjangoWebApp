@@ -1,12 +1,39 @@
 <!-- StudyApp/templates/StudyApp/login.html -->
 {% extends "base_generic.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <title>Login</title>
+    <!--Stylesheet-->
 
+    <!-- Add your CSS here -->
+</head>
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-    <a href="{% url 'register' %}" class="btn">Register</a>
-  </form>
+<body>
+    <link rel="stylesheet" href="{% static 'StudyApp/css/login.css' %}"><!-- StudyApp/templates/StudyApp/login.html -->
+    <div id="loading" style="display: none;">
+        <div class="loader"></div>
+    </div>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+<div id="errorMessage" style="display: none; color: red;"></div>
+<!-- StudyApp/templates/StudyApp/login.html -->
+    <form method="post" onsubmit="showError() && showLoading()">
+        {% csrf_token %}
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username" id="username" name="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="password">
+
+        <button type="submit">Log In</button>
+        <a href="{% url 'register' %}" class="register-link">Register</a>
+    </form>
+<script src="{% static 'StudyApp/js/login.js' %}"></script>
+</body>
 {% endblock %}
+</html>
