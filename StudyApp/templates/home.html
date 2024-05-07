@@ -2,11 +2,40 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'StudyApp/css/home.css' %}">
-    <div class="logout-button">
-        <form action="{% url 'logout' %}" method="POST">
-            {% csrf_token %}
-            <button type="submit">Logout</button>
-        </form>
+
+    <!-- First division for the heading -->
+    <div id="heading">
+        <a href="{% url 'home' %}"><h1>Home</h1></a>
     </div>
-    <h1>Welcome to the Home Page!</h1>
+    <div id="profile-view">
+    <!-- Add your profile view content here -->
+        <p class="initials">{{ user.first_name|slice:":1" }}{{ user.last_name|slice:":1" }}</p>
+    <div id="dropdown-menu" class="dropdown-menu">
+    <div class="menu-option">
+       <a id="about-link" href="{% url 'home' %}">About</a>
+    </div>
+    <div class="menu-option">
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+</div>
+
+    <!-- Second division for the menu options -->
+    <div id="menu">
+        <!-- Add your menu options here -->
+    </div>
+
+    <!-- Third division for the content view from the menu -->
+    <div id="content">
+
+        <!-- The content from the menu will be displayed here -->
+    </div>
+<script src="{% static 'StudyApp/js/home.js' %}"></script>
+<script type="text/javascript">
+        var user = {
+            'first_name': "{{ user.first_name }}",
+            'last_name': "{{ user.last_name }}",
+            'email': "{{ user.email }}"
+        };
+</script>
 {% endblock %}
