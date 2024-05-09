@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ysih%=f(5&$+h%jg72aldf%$9t@padbl8wx$dwfka8bb@k^n=$
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['vpdjangoapp.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['copilotvp.azurewebsites.net']
 
 
 # Application definition
