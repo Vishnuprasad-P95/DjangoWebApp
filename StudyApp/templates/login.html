@@ -1,7 +1,7 @@
 <!-- StudyApp/templates/StudyApp/login.html -->
 {% extends "base_generic.html" %}
 {% load static %}
-<html lang="en">
+<title>{% block title %}login{% endblock %}</title>
 <head>
     <title>Login</title>
     <!--Stylesheet-->
@@ -36,4 +36,3 @@
 <script src="{% static 'StudyApp/js/login.js' %}"></script>
 </body>
 {% endblock %}
-</html>

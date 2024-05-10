@@ -1,6 +1,7 @@
 {% extends "base_generic.html" %}
 {% load static %}
 {% block content %}
+<title>{% block title %}Register{% endblock %}</title>
 <link rel="stylesheet" href="{% static 'StudyApp/css/register.css' %}">
 <form method="post">
     {% csrf_token %}

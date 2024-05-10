@@ -1,7 +1,11 @@
 body {
-    /* Replace 'path-to-your-image.jpg' with the path to your new image */
-    background-image: url('../images/background.jpg');
+    /* Replace 'path-to-your-image.jpg' with the path to your new image background-image: url('../images/background.jpg'); */
+    background: linear-gradient(#5fbdff, #ffd38a);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    background-color: #dfb97a;
 }
