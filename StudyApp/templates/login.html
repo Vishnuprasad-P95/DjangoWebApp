@@ -29,10 +29,19 @@
 
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password" name="password">
-
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <b> {% if message.tags %} {% endif %} {{ message }} </b><br>
+            {% endfor %}
+        </div>
+        {% endif %}
         <button type="submit">Log In</button>
+
         <a href="{% url 'register' %}" class="register-link">Register</a>
+
     </form>
+
 <script src="{% static 'StudyApp/js/login.js' %}"></script>
 </body>
 {% endblock %}

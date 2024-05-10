@@ -28,10 +28,6 @@
 
     <!-- Third division for the content view from the menu -->
     <div id="content">
-
-        <!-- The content from the menu will be displayed here -->
-    </div>
-<script src="{% static 'StudyApp/js/home.js' %}"></script>
 <script type="text/javascript">
         var user = {
             'first_name': "{{ user.first_name }}",
@@ -39,4 +35,8 @@
             'email': "{{ user.email }}"
         };
 </script>
+        <!-- The content from the menu will be displayed here -->
+    </div>
+<script src="{% static 'StudyApp/js/home.js' %}"></script>
+
 {% endblock %}

@@ -15,17 +15,20 @@ import json
 
 def login_view(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            user = authenticate(request, username=form.cleaned_data['username'], password=form.cleaned_data['password'])
-            if user is not None:
-                login(request, user)  # This line logs the user in
-                return redirect('home')
-            else:
-                messages.error(request, 'Invalid username or password.')
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid username or password.')
+            # Return to the same page with the error message.
+            return redirect('login')
     else:
-        form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+        # If the request method is not POST, display the login page.
+        return render(request, 'login.html')
 
 
 def register(request):
